@@ -1,0 +1,18 @@
+service: myservice
+
+provider:
+  name: aws
+  runtime: go1.x
+
+  stage: dev
+  region: ap-southeast-2
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  opacheck:
+    handler: bin/opacheck
