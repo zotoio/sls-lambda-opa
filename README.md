@@ -15,7 +15,7 @@ Experiment embedding Open Policy Agent (https://www.openpolicyagent.org/) within
 This will compile the go files, and then deploy 3 Lambdas and associated API gateway.
 - opacheck (the authorizer)
 - gold target (accessible to gold role only (?role=gold)
-- silver target (accessible to sivler and gold roles
+- silver target (accessible to silver and gold roles)
 
 ## Test
 Tail logs as below in one shell, and then use some of the following:
