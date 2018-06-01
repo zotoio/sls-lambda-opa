@@ -1,4 +1,4 @@
-service: myservice
+service: sls-lambda-opa
 
 provider:
   name: aws
@@ -16,3 +16,33 @@ package:
 functions:
   opacheck:
     handler: bin/opacheck
+    events:
+      - http:
+          path: opacheck
+          method: get
+
+  gold:
+    handler: bin/gold
+    events:
+      - http:
+          path: gold
+          method: get
+          authorizer:
+            type: request
+            name: opacheck
+            #arn: ${env:SLS_AUTHORIZER_ARN}
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+
+  silver:
+    handler: bin/silver
+    events:
+      - http:
+          path: silver
+          method: get
+          authorizer:
+            type: request
+            name: opacheck
+            #arn: ${env:SLS_AUTHORIZER_ARN}
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
