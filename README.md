@@ -1,6 +1,6 @@
 # sls-lambda-opa
 
-Experiment embedding Open Policy Agent (https://www.openpolicyagent.org/) within a GoLang Api Gateway Authorizer Lambda function, deployed via Serverless framework.
+Experiment embedding Open Policy Agent (https://www.openpolicyagent.org/) within a GoLang Api Gateway Authorizer Lambda function, deployed via Serverless framework.  See this for info on AWS Api Gateway Authorizer Lambdas: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html
 
 ## Install
 1. go https://golang.org/doc/install#install
